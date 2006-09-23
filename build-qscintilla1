@@ -1,0 +1,27 @@
+#!/bin/bash
+
+WHERE=http://www.riverbankcomputing.com/Downloads/Snapshots/QScintilla1
+PKG=qscintilla-1.71-gpl-1-snapshot-20060909
+JOBS=$(getconf _NPROCESSORS_ONLN)
+
+pushd ../SOURCES
+if [ ! -f $PKG.tar.gz ]; then
+    wget $WHERE/$PKG.tar.gz
+fi
+popd
+
+pushd ../BUILD
+rm -rf $PKG
+tar xfz ../SOURCES/$PKG.tar.gz
+pushd $PKG/qt
+$QTDIR/bin/qmake qscintilla.pro
+make -j $JOBS
+make install
+popd # $PKG/qt
+pushd $PKG/designer
+$QTDIR/bin/qmake
+make
+popd # $PKG/designer
+popd # ../BUILD
+
+# EOF

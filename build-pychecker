@@ -1,0 +1,18 @@
+#!/bin/bash
+
+PKG=pychecker-0.8.17
+
+pushd ../SOURCES
+if [ ! -f pychecker-0.8.17.tar.gz ]; then 
+    wget $SF/pychecker/$PKG.tar.gz
+fi
+
+pushd ../BUILD
+rm -rf $PKG
+tar xfz ../SOURCES/$PKG.tar.gz
+pushd $PKG
+python setup.py install
+popd # $PKG
+popd # ../BUILD
+
+# EOF
