@@ -1,0 +1,24 @@
+#!/bin/bash
+
+pushd ..
+if [ ! -d SOURCES ]; then
+    mkdir SOURCES
+fi
+if [ ! -d BUILD ]; then
+    mkdir BUILD
+fi
+popd
+
+./build-python
+./build-numarray
+./build-numeric
+./build-numpy
+./build-qt3.3
+./build-qt4.1
+./build-sip
+./build-pyqt
+./build-pyqt4
+
+# Local Variables: ***
+# mode: sh ***
+# End: ***

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -x
+
+WHERE=http://www.riverbankcomputing.com/Downloads/Snapshots/sip4
+PKG=sip-snapshot-20060922
+
+pushd ../SOURCES
+if [ ! -f $PKG.tar.gz ]; then
+    wget $WHERE/$PKG.tar.gz
+fi
+popd
+
+pushd ../BUILD
+rm -rf $PKG
+tar xvfz ../SOURCES/$PKG.tar.gz
+pushd $PKG
+python configure.py
+make
+make install
+popd # $PKG
+popd # ../BUILD
+
+# EOF

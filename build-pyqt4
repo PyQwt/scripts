@@ -1,0 +1,27 @@
+#!/bin/bash
+
+WHERE=http://www.riverbankcomputing.com/Downloads/Snapshots/PyQt4
+PKG=PyQt-x11-gpl-4-snapshot-20060922
+JOBS=$(getconf _NPROCESSORS_ONLN)
+
+pushd ../SOURCES
+if [ ! -f $PKG.tar.gz ]; then
+    wget $WHERE/$PKG.tar.gz
+fi
+popd
+
+pushd ../BUILD
+rm -rf $PKG
+tar xfz ../SOURCES/$PKG.tar.gz
+pushd $PKG
+python configure.py -c -j $JOBS \
+    -q /home/packer/usr/lib/qt4.1/bin/qmake \
+    CXXFLAGS+="-fno-exceptions" <<EOF
+yes
+EOF
+make -j $JOBS
+make install
+popd # PKG
+popd # ../BUILD
+
+# EOF

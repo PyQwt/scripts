@@ -1,0 +1,22 @@
+#!/bin/bash
+
+PKG=Numeric-24.2
+
+pushd ../SOURCES
+if [ ! -f $PKG.tar.gz ]; then
+    wget $SF/numpy/$PKG.tar.gz
+fi
+popd
+
+pushd ../BUILD
+rm -rf $PKG
+tar xfz ../SOURCES/$PKG.tar.gz
+pushd $PKG
+python setup.py install
+popd # PKG
+popd # BUILD
+
+# Local Variables: ***
+# mode: sh ***
+# End: ***
+
