@@ -1,0 +1,31 @@
+#!/bin/bash
+
+PKG=qwtplot3d-0.2.6
+
+pushd ../SOURCES
+if [ ! -f $PKG.tgz ]; then
+    wget $SF/qwtplot3d/$PKG.tgz
+fi
+popd
+
+pushd ../BUILD
+rm -rf $PKG
+tar xfz ../SOURCES/$PKG.tgz
+mv qwtplot3d $PKG
+pushd $PKG
+cat >> qwtplot3d.pro <<EOF
+include.path += $HOME/usr/include/qwtplot3d
+include.files += \$\${HEADERS}
+target.path += $HOME/usr/lib
+INSTALLS += include target
+EOF
+(qmake && make && make install)
+# examples
+(cd examples && qmake && make)
+popd # $PKG
+popd # ../BUILD
+
+# Local Variables: ***
+# mode: sh ***
+# End: ***
+

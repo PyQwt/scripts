@@ -1,0 +1,35 @@
+#!/bin/bash
+
+PKG=qwt-5.0.0rc0
+
+pushd ../SOURCES
+if [ ! -f $PKG.tar.bz2 ]; then
+    wget $SF/qwt/$PKG.tar.bz2
+fi
+popd
+
+pushd ../BUILD
+rm -rf $PKG
+tar xfj ../SOURCES/$PKG.tar.bz2
+pushd $PKG
+# library
+mv qwt.pro qwt.pro.in
+head -n -9 qwt.pro.in >qwt.pro 
+cat >> qwt.pro <<EOF
+include.path += $HOME/usr/include/qwt
+include.files += \$\${HEADERS}
+target.path += $HOME/usr/lib
+INSTALLS += include target
+EOF
+(qmake && make && make install)
+# examples
+(cd examples && qmake && make)
+# designer
+(cd designer && qmake && make && make install)
+popd # $PKG
+popd # ../BUILD
+
+# Local Variables: ***
+# mode: sh ***
+# End: ***
+

@@ -21,6 +21,8 @@ popd
 ./build-sip
 ./build-pyqt
 ./build-pyqt4
+./build-qwt
+./build-qwtplot3d
 
 # Local Variables: ***
 # mode: sh ***

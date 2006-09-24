@@ -1,0 +1,19 @@
+#!/bin/bash
+
+PKG=gccxml
+
+pushd ../BUILD
+pushd $PKG
+cvs up -dP
+popd # $PKG
+
+rm -rf gccxml-build
+mkdir gccxml-build
+pushd gccxml-build
+cmake ../gccxml -DCMAKE_INSTALL_PREFIX:PATH=$HOME/usr
+make
+make install
+popd # gccxml-build
+popd # ../BUILD
+
+# EOF
