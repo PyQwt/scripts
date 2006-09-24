@@ -1,0 +1,24 @@
+#!/bin/bash
+
+PKG=simage
+JOBS=$(getconf _NPROCESSORS_ONLN)
+
+pushd ../SOURCES
+if [ ! -f $PKG-latest.tar.gz ]; then
+    wget http://ftp.coin3d.org/coin/src/snapshots/$PKG-latest.tar.gz
+fi
+popd
+
+pushd ../BUILD
+rm -rf $PKG
+tar xfz ../SOURCES/$PKG-latest.tar.gz
+pushd $PKG
+./configure --prefix=$HOME/usr --disable-static --disable-qimage
+make -j $JOBS
+make install
+popd # $PKG
+popd # ../BUILD
+
+# Local Variables: ***
+# mode: sh ***
+# End: ***

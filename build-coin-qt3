@@ -1,0 +1,25 @@
+#!/bin/bash
+
+PKG=Coin-2.4.5
+JOBS=$(getconf _NPROCESSORS_ONLN)
+
+pushd ../SOURCES
+if [ ! -f $PKG.tar.gz ]; then
+    wget http://ftp.coin3d.org/coin/src/$PKG.tar.gz
+fi
+popd
+
+pushd ../BUILD
+rm -rf $PKG
+tar xfz ../SOURCES/$PKG.tar.gz
+pushd $PKG
+./configure --prefix $HOME/usr/lib/qt3.3 --enable-threads --enable-threadsafe
+make -j $JOBS
+make install
+popd # $PKG
+popd # ../BUILD
+
+# Local Variables: ***
+# mode: sh ***
+# End: ***
+

@@ -16,8 +16,13 @@ popd
 ./build-numpy
 ./build-scipy
 ./build-qt3.3
-./build-qscintilla1
 ./build-qt4.1
+./build-qscintilla1
+./build-simage
+./build-coin-qt3
+./build-coin-qt4
+./build-soqt-qt3
+./build-soqt-qt4
 ./build-sip
 ./build-pyqt
 ./build-pyqt4
