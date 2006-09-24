@@ -15,6 +15,7 @@ popd
 ./build-numeric
 ./build-numpy
 ./build-scipy
+./build-gccxml
 ./build-qt3.3
 ./build-qt4.1
 ./build-qscintilla1
