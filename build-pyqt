@@ -14,7 +14,7 @@ pushd ../BUILD
 rm -rf $PKG
 tar xfz ../SOURCES/$PKG.tar.gz
 pushd $PKG
-python configure.py -c -j $JOBS \
+python configure.py -c -j $((2*$JOBS)) \
     -r -q $HOME/usr/lib/qt3.3 \
     CXXFLAGS+="-fno-exceptions" <<EOF
 yes

@@ -14,7 +14,7 @@ pushd ../BUILD
 rm -rf $PKG
 tar xfz ../SOURCES/$PKG.tar.gz
 pushd $PKG
-python configure.py -c -j $JOBS \
+python configure.py -c -j $((2*$JOBS)) \
     -q /home/packer/usr/lib/qt4.1/bin/qmake \
     CXXFLAGS+="-fno-exceptions" <<EOF
 yes
