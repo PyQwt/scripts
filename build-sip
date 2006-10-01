@@ -3,7 +3,7 @@
 set -x
 
 WHERE=http://www.riverbankcomputing.com/Downloads/Snapshots/sip4
-PKG=sip-snapshot-20060924
+PKG=sip-snapshot-20060930
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then
