@@ -9,26 +9,10 @@ if [ ! -d BUILD ]; then
 fi
 popd
 
-./build-python
-./build-pychecker
-./build-numarray
-./build-numeric
-./build-numpy
-./build-scipy
-./build-gccxml
-./build-qt3.3
-./build-qt4.1
 ./build-qscintilla1
-./build-simage
-./build-coin-qt3
-./build-coin-qt4
-./build-soqt-qt3
-./build-soqt-qt4
 ./build-sip
 ./build-pyqt
 ./build-pyqt4
-./build-qwt
-./build-qwtplot3d
 ./build-pyqwt5
 ./build-pyqwt4
 ./build-pyqwt3d

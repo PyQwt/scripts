@@ -1,0 +1,10 @@
+#!/bin/bash
+
+pushd ../pyqwt4
+cvs up -dP
+make install
+popd # ../pyqwt4
+
+# Local Variables: ***
+# mode: sh ***
+# End: ***

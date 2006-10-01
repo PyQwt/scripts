@@ -1,0 +1,10 @@
+#!/bin/bash
+
+pushd ../../pyqwt3d
+cvs up -dP
+make install
+popd # ../../pyqwt3d
+
+# Local Variables: ***
+# mode: sh ***
+# End: ***
