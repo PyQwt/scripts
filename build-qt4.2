@@ -13,7 +13,7 @@ pushd ../BUILD
 rm -rf $PKG
 tar xfz ../SOURCES/$PKG.tar.gz
 pushd $PKG
-sed -i 's| -Wl,-rpath,||g' mkspecs/linux-g++*/qmake.conf
+sed -i 's| -Wl,-rpath,||g' mkspecs/common/g++.conf
 ./configure -prefix ~/usr/lib/qt4.2 -qt-gif -no-exceptions <<EOF
 yes
 EOF
