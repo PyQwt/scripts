@@ -1,7 +1,7 @@
 #!/bin/bash
 
 WHERE=http://www.riverbankcomputing.com/Downloads/Snapshots/PyQt3
-PKG=PyQt-x11-gpl-3-snapshot-20060909
+PKG=PyQt-x11-gpl-3-snapshot-20061006
 JOBS=$(getconf _NPROCESSORS_ONLN)
 
 pushd ../SOURCES

@@ -17,7 +17,7 @@ popd
 ./build-scipy
 ./build-gccxml
 ./build-qt3.3
-./build-qt4.1
+./build-qt4.2
 ./build-qscintilla1
 ./build-simage
 ./build-coin-qt3

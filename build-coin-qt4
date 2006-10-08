@@ -13,7 +13,7 @@ pushd ../BUILD
 rm -rf $PKG
 tar xfz ../SOURCES/$PKG.tar.gz
 pushd $PKG
-./configure --prefix $HOME/usr/lib/qt4.1 --enable-threads --enable-threadsafe
+./configure --prefix $HOME/usr/lib/qt4.2 --enable-threads --enable-threadsafe
 make -j $JOBS
 make install
 popd # $PKG

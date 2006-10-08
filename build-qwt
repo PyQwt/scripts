@@ -16,9 +16,9 @@ pushd $PKG
 mv qwt.pro qwt.pro.in
 head -n -9 qwt.pro.in >qwt.pro 
 cat >> qwt.pro <<EOF
-include.path += $HOME/usr/include/qwt
+include.path += \$\$[QT_INSTALL_PREFIX]/include/qwt
 include.files += \$\${HEADERS}
-target.path += $HOME/usr/lib
+target.path += \$\$[QT_INSTALL_PREFIX]/lib
 INSTALLS += include target
 EOF
 (qmake && make && make install)
