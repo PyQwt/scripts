@@ -12,6 +12,13 @@ pushd ../BUILD
 rm -rf $PKG
 tar xfz ../SOURCES/$PKG.tar.gz
 pushd $PKG
+if [ -f /etc/mandrakelinux-release ]; then
+cat >site.cfg <<EOF
+[atlas]
+library_dirs = /usr/lib
+atlas_libs = lapack, f77blas, cblas, atlas
+EOF
+fi
 python setup.py install
 popd # $PKG
 popd # ../BUILD
