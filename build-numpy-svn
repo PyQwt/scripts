@@ -1,0 +1,19 @@
+#!/bin/bash
+
+PKG=numpy
+
+pushd ../BUILD
+if [ ! -e numpy ]; then
+    svn co http://svn.scipy.org/svn/numpy/trunk numpy
+fi
+
+pushd $PKG
+svn up
+python setup.py build --force
+python setup.py install
+popd # $PKG
+popd # ../BUILD
+
+# Local Variables: ***
+# mode: sh ***
+# End: ***

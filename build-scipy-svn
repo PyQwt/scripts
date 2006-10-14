@@ -1,0 +1,19 @@
+#!/bin/bash
+
+PKG=scipy
+
+pushd ../BUILD
+if [ ! -e scipy ]; then
+    svn co http://svn.scipy.org/svn/scipy/trunk scipy
+fi
+
+pushd $PKG
+svn up
+python setup.py build --force
+python setup.py install
+popd # $PKG
+popd # ../BUILD
+
+# Local Variables: ***
+# mode: sh ***
+# End: ***
