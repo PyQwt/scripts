@@ -13,8 +13,8 @@ popd
 ./build-pychecker
 ./build-numarray
 ./build-numeric
-./build-numpy
-./build-scipy
+./build-numpy-svn
+./build-scipy-svn
 ./build-gccxml
 ./build-qt3.3
 ./build-qt4.2
