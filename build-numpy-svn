@@ -9,7 +9,19 @@ fi
 
 pushd $PKG
 svn up
-python setup.py build --force
+if [ -f /etc/mandrakelinux-release ]; then
+cat >site.cfg <<EOF
+[atlas]
+atlas_libs = lapack, f77blas, cblas, atlas
+EOF
+fi
+if [ -f /etc/gentoo-release ]; then
+cat >site.cfg <<EOF
+[atlas]
+atlas_libs = lapack, blas, cblas, atlas
+EOF
+fi
+python setup.py build --force 
 python setup.py install
 popd # $PKG
 popd # ../BUILD
