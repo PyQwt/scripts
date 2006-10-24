@@ -1,0 +1,19 @@
+#!/bin/bash
+
+PKG=eric-snapshot-20060915
+WHERE=http://www.die-offenbachs.de/detlev/snapshots
+
+pushd ../SOURCES
+if [ ! -f $PKG.tar.gz ]; then
+    wget $WHERE/$PKG.tar.gz
+fi
+
+pushd ../BUILD
+rm -rf $PKG
+tar xfz ../SOURCES/$PKG.tar.gz
+pushd $PKG
+python install.py -b ~/usr/bin
+popd # $PKG
+popd # ../BUILD
+
+# EOF
