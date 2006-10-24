@@ -10,12 +10,15 @@ fi
 popd
 
 ./build-qscintilla1
+./build-qscintilla2
 ./build-sip
 ./build-pyqt
 ./build-pyqt4
 ./build-pyqwt5
 ./build-pyqwt4
 ./build-pyqwt3d
+./build-eric3
+./build-eric4
 
 # Local Variables: ***
 # mode: sh ***

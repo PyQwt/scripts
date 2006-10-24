@@ -19,6 +19,7 @@ popd
 ./build-qt3.3
 ./build-qt4.2
 ./build-qscintilla1
+./build-qscintilla2
 ./build-simage
 ./build-coin-qt3
 ./build-coin-qt4
@@ -32,6 +33,8 @@ popd
 ./build-pyqwt5
 ./build-pyqwt4
 ./build-pyqwt3d
+./build-eric3
+./build-eric4
 
 # Local Variables: ***
 # mode: sh ***
