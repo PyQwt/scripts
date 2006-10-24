@@ -1,0 +1,33 @@
+#!/bin/bash
+
+WHERE=http://www.riverbankcomputing.com/Downloads/Snapshots/QScintilla2
+PKG=QScintilla2-1.71-gpl-2-snapshot-20061021
+JOBS=$(getconf _NPROCESSORS_ONLN)
+
+pushd ../SOURCES
+if [ ! -f $PKG.tar.gz ]; then
+    wget $WHERE/$PKG.tar.gz
+fi
+popd
+
+pushd ../BUILD
+rm -rf $PKG
+tar xfz ../SOURCES/$PKG.tar.gz
+pushd $PKG/Qt4
+qmake
+make -j $JOBS
+make install
+popd # $PKG/Qt4
+pushd $PKG/designer-Qt4
+qmake
+make
+make install
+popd # $PKG/designer-Qt4
+pushd $PKG/Python
+python configure.py -j $JOBS
+make -j $JOBS
+make install
+popd # $PKG/Python
+popd # ../BUILD
+
+# EOF
