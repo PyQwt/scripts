@@ -4,6 +4,7 @@ export SF=http://belnet.dl.sourceforge.net/sourceforge
 export SF=http://puzzle.dl.sourceforge.net/sourceforge
 
 export QTDIR=$HOME/usr/lib/qt3.3
+export QT4DIR=$HOME/usr/lib/qt4.2
 
 PATH=$HOME/usr/lib/qt4.2/bin:$PATH
 PATH=$HOME/usr/bin:$PATH
@@ -14,6 +15,8 @@ LD_LIBRARY_PATH=$HOME/usr/lib/qt4.2/lib:$LD_LIBRARY_PATH
 LD_LIBRARY_PATH=$HOME/usr/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH
 
+export PYTHONDOCDIR=$HOME/usr/share/doc/python2.5/html
+export PYQT4DOCDIR=$HOME/usr/share/doc/PyQt4
 
 # Local Variables: ***
 # mode: sh ***

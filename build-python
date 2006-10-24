@@ -16,6 +16,11 @@ pushd $PKG
 OPT="-O3 -Wall" ./configure --prefix=$HOME/usr --with-cxx=g++
 make -j $JOBS
 make install
+pushd Doc
+make html
+mkdir -p $HOME/usr/share/doc/python2.5
+cp -R html $HOME/usr/share/doc/python2.5
+popd # Doc
 popd # $PKG
 popd # ../BUILD
 

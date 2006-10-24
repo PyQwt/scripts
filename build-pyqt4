@@ -21,6 +21,8 @@ yes
 EOF
 make -j $JOBS
 make install
+mkdir -p $HOME/usr/share/doc/PyQt4
+cp -R doc/* $HOME/usr/share/doc/PyQt4
 popd # PKG
 popd # ../BUILD
 
