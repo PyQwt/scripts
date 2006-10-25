@@ -16,6 +16,7 @@ LD_LIBRARY_PATH=$HOME/usr/lib/qt4.2/lib:$LD_LIBRARY_PATH
 LD_LIBRARY_PATH=$HOME/usr/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH
 
+export PYTHONDOCS=$HOME/usr/share/doc/python2.5/html
 export PYTHONDOCDIR=$HOME/usr/share/doc/python2.5/html
 export PYQT4DOCDIR=$HOME/usr/share/doc/PyQt4
 
