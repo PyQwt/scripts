@@ -7,6 +7,7 @@ export QTDIR=$HOME/usr/lib/qt3.3
 export QT4DIR=$HOME/usr/lib/qt4.2
 
 PATH=$HOME/usr/lib/qt4.2/bin:$PATH
+PATH=$HOME/Manip_QT/bin:$PATH
 PATH=$HOME/usr/bin:$PATH
 export PATH
 
