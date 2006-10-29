@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=eric4-snapshot-20061022
+PKG=eric4-snapshot-20061029
 WHERE=http://www.die-offenbachs.de/detlev/snapshots4/
 
 pushd ../SOURCES
