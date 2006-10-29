@@ -16,7 +16,7 @@ pushd $PKG
 cat >> qwtplot3d.pro <<EOF
 include.path += \$\$[QT_INSTALL_PREFIX]/include/qwtplot3d
 include.files += \$\${HEADERS}
-target.path += \$\$[QT_INSTALL_PREFIX]/usr/lib
+target.path += \$\$[QT_INSTALL_PREFIX]/lib
 INSTALLS += include target
 EOF
 (qmake && make && make install)
