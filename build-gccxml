@@ -3,6 +3,9 @@
 PKG=gccxml
 
 pushd ../BUILD
+if [ ! -e $PKG ]; then
+    cvs -d :pserver:anoncvs@www.gccxml.org:/cvsroot/GCC_XML co gccxml
+fi
 pushd $PKG
 cvs up -dP
 popd # $PKG
