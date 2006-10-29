@@ -11,6 +11,7 @@ popd
 
 ./build-python
 ./build-pychecker
+./build-mercurial
 ./build-numarray
 ./build-numeric
 ./build-numpy-svn
@@ -19,7 +20,6 @@ popd
 ./build-qt3.3
 ./build-qt4.2
 ./build-qscintilla1
-./build-qscintilla2
 ./build-simage
 ./build-coin-qt3
 ./build-coin-qt4
@@ -28,6 +28,7 @@ popd
 ./build-sip
 ./build-pyqt
 ./build-pyqt4
+./build-qscintilla2
 ./build-qwt
 ./build-qwtplot3d
 ./build-pyqwt5

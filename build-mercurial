@@ -1,0 +1,20 @@
+#!/bin/bash
+
+WHERE=http://www.selenic.com/mercurial/release/
+PKG=mercurial-0.9.1
+
+pushd ../SOURCES
+if [ ! -f $PKG.tar.gz ]; then
+    wget $WHERE/$PKG.tar.gz
+fi
+popd
+
+pushd ../BUILD
+rm -rf $PKG
+tar xfz ../SOURCES/$PKG.tar.gz
+pushd $PKG
+python setup.py install
+popd # $PKG
+popd # ../BUILD
+
+# EOF
