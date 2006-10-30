@@ -2,6 +2,7 @@
 
 pushd ../pyqwt4
 cvs up -dP
+make distclean
 make install
 popd # ../pyqwt4
 

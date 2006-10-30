@@ -2,6 +2,7 @@
 
 pushd ../../pyqwt3d
 cvs up -dP
+make distclean
 make install
 popd # ../../pyqwt3d
 
