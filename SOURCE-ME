@@ -9,6 +9,7 @@ export QT4DIR=$HOME/usr/lib/qt4.2
 PATH=$HOME/usr/lib/qt4.2/bin:$PATH
 PATH=$HOME/Manip_QT/bin:$PATH
 PATH=$HOME/usr/bin:$PATH
+PATH=$HOME/CVS/PyQwt/BUILD/gccxml-build/bin:$PATH
 export PATH
 
 LD_LIBRARY_PATH=$HOME/usr/lib/qt3.3/lib:$LD_LIBRARY_PATH

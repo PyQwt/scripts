@@ -15,7 +15,7 @@ mkdir gccxml-build
 pushd gccxml-build
 cmake ../gccxml -DCMAKE_INSTALL_PREFIX:PATH=$HOME/usr
 make
-make install
+#make install
 popd # gccxml-build
 popd # ../BUILD
 
