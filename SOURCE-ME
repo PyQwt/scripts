@@ -6,7 +6,7 @@ export SF=http://puzzle.dl.sourceforge.net/sourceforge
 export QTDIR=$HOME/usr/lib/qt3.3
 export QT4DIR=$HOME/usr/lib/qt4.2
 
-export MANIPQT=$HOME/CVS/Manip_QT
+export MANIPQT=$HOME/CVS/ManipQt
 
 PATH=$HOME/usr/lib/qt4.2/bin:$PATH
 PATH=$MANIPQT/bin:$PATH
