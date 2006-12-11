@@ -5,7 +5,7 @@ set -x
 #WHERE=http://www.riverbankcomputing.com/Downloads/Snapshots/sip4
 #PKG=sip-snapshot-20061028
 WHERE=http://www.riverbankcomputing.com/Downloads/sip4
-PKG=sip-4.5
+PKG=sip-4.5.2
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then

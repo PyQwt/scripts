@@ -9,9 +9,9 @@ if [ ! -d BUILD ]; then
 fi
 popd
 
+./build-sip
 ./build-qscintilla1
 ./build-qscintilla2
-./build-sip
 ./build-pyqt
 ./build-pyqt4
 ./build-pyqwt5
