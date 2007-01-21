@@ -17,7 +17,7 @@ pushd ../BUILD
 rm -rf $PKG
 tar xvfz ../SOURCES/$PKG.tar.gz
 pushd $PKG
-python configure.py
+python configure.py -u
 make
 make install
 popd # $PKG
