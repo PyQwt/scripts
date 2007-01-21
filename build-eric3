@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=eric-3.9.2
+PKG=eric-3.9.4
 WHERE=$SF/eric-ide
 
 #PKG=eric-snapshot-20061029

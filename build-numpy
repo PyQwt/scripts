@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=numpy-1.0rc2
+PKG=numpy-1.0.1
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then

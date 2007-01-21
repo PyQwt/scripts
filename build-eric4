@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PKG=eric4-snapshot-20061112
 WHERE=http://www.die-offenbachs.de/detlev/snapshots4/
+PKG=eric4-snapshot-20070114
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then
