@@ -25,9 +25,9 @@ popd
 ./build-coin-qt4
 ./build-soqt-qt3
 ./build-soqt-qt4
-./build-sip
-./build-pyqt
-./build-pyqt4
+./build-sip-svn
+./build-pyqt-svn
+./build-pyqt4-svn
 ./build-qscintilla2
 ./build-qwt
 ./build-qwtplot3d

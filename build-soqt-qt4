@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=SoQt-1.4.0
+PKG=SoQt-1.4.1
 JOBS=$(getconf _NPROCESSORS_ONLN)
 
 pushd ../SOURCES
