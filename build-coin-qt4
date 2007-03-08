@@ -16,6 +16,25 @@ pushd $PKG
 ./configure --prefix $HOME/usr/lib/qt4.2 --enable-threads --enable-threadsafe
 make -j $JOBS
 make install
+
+make docs/coin.doxygen
+pushd docs
+doxygen -u coin.doxygen
+cat >> coin.doxygen << EOF
+GENERATE_HTML = yes
+HTML_HEADER =
+HTML_FOOTER =
+HTML_STYLESHEET =
+HAVE_DOT = yes
+EOF
+doxygen coin.doxygen
+rm -f html/*.{map,md5}
+mkdir -p $HOME/usr/share/doc/$PKG
+cp -r html $HOME/usr/share/doc/$PKG
+popd # docs
+
+make install
+
 popd # $PKG
 popd # ../BUILD
 

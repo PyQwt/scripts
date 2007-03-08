@@ -16,6 +16,20 @@ pushd $PKG
 ./configure --prefix $HOME/usr/lib/qt4.2 --with-qt=$HOME/usr/lib/qt4.2
 make -j $JOBS
 make install
+
+doxygen -u sogui.doxygen
+cat >> sogui.doxygen << EOF
+GENERATE_HTML = yes
+HTML_HEADER =
+HTML_FOOTER =
+HTML_STYLESHEET =
+HAVE_DOT = yes
+EOF
+doxygen sogui.doxygen
+rm -f html/*.{map,md5} html/Makefile*
+mkdir -p $HOME/usr/share/doc/$PKG
+cp -r html $HOME/usr/share/doc/$PKG
+
 popd # $PKG
 popd # ../BUILD
 
