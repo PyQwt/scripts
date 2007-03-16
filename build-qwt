@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=qwt-5.0.0rc1
+PKG=qwt-5.0.1
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.bz2 ]; then
@@ -12,16 +12,15 @@ pushd ../BUILD
 rm -rf $PKG
 tar xfj ../SOURCES/$PKG.tar.bz2
 pushd $PKG
+
+# patch the configuration
+perl -pi -e 's|release|debug|g' qwtconfig.pri
+perl -pi -e 's|INSTALLBASE/lib|\[QT_INSTALL_PREFIX\]/lib|g' qwtconfig.pri
+perl -pi -e 's|INSTALLBASE/include|\[QT_INSTALL_PREFIX\]/include/qwt|g' qwtconfig.pri
+perl -pi -e 's|INSTALLBASE/doc|\[QT_INSTALL_PREFIX\]/doc/qwt|g' qwtconfig.pri
+
 # library
-mv qwt.pro qwt.pro.in
-head -n -9 qwt.pro.in >qwt.pro 
-cat >> qwt.pro <<EOF
-include.path += \$\$[QT_INSTALL_PREFIX]/include/qwt
-include.files += \$\${HEADERS}
-target.path += \$\$[QT_INSTALL_PREFIX]/lib
-INSTALLS += include target
-EOF
-(qmake && make && make install)
+(cd src && qmake && make && make install)
 # examples
 (cd examples && qmake && make)
 # designer

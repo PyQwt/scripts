@@ -14,7 +14,11 @@ rm -rf $PKG
 tar xfz ../SOURCES/$PKG.tar.gz
 pushd $PKG
 sed -i 's| -Wl,-rpath,||g' mkspecs/common/g++.conf
-./configure -prefix ~/usr/lib/qt4.2 -qt-gif -no-exceptions <<EOF
+./configure \
+    -debug-and-release \
+    -prefix ~/usr/lib/qt4.2 \
+    -qt-gif \
+    -no-exceptions <<EOF
 yes
 EOF
 make -j $JOBS
