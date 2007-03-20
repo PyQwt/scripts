@@ -18,6 +18,10 @@ perl -pi -e 's|release|debug|g' qwtconfig.pri
 perl -pi -e 's|INSTALLBASE/lib|\[QT_INSTALL_PREFIX\]/lib|g' qwtconfig.pri
 perl -pi -e 's|INSTALLBASE/include|\[QT_INSTALL_PREFIX\]/include/qwt|g' qwtconfig.pri
 perl -pi -e 's|INSTALLBASE/doc|\[QT_INSTALL_PREFIX\]/doc/qwt|g' qwtconfig.pri
+perl -pi -e 's|INSTALLBASE/doc|\[QT_INSTALL_PREFIX\]/doc/qwt|g' qwtconfig.pri
+cat >> qwtconfig.pri <<EOF
+CONFIG += QwtSVGItem
+EOF
 
 # library
 (cd src && qmake && make && make install)

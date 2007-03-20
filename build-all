@@ -29,7 +29,8 @@ popd
 ./build-pyqt-svn
 ./build-pyqt4-svn
 ./build-qscintilla2
-./build-qwt
+./build-qwt-qt3
+./build-qwt-qt4
 ./build-qwtplot3d
 ./build-pyqwt5
 ./build-pyqwt4
