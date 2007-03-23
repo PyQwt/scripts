@@ -26,6 +26,8 @@ export PYTHONDOCS=$HOME/usr/share/doc/python2.5/html
 export PYTHONDOCDIR=$HOME/usr/share/doc/python2.5/html
 export PYQT4DOCDIR=$HOME/usr/share/doc/PyQt4
 
+export ENGAUGE_USERMANUAL=$HOME/CVS/PyQwt/BUILD/digitizer/usermanual
+
 # Local Variables: ***
 # mode: sh ***
 # End: ***

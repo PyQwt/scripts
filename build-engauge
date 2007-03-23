@@ -1,0 +1,21 @@
+#!/bin/bash
+
+PKG=digit-src-4_0
+WHERE=$SF/digitizer
+
+pushd ../SOURCES
+if [ ! -f $PKG.tar.gz ]; then
+    wget $WHERE/$PKG.tar.gz
+fi
+
+pushd ../BUILD
+rm -rf digitizer
+tar xfz ../SOURCES/$PKG.tar.gz
+pushd digitizer
+~/usr/lib/qt3.3/bin/qmake
+make
+cp bin/engauge ~/usr/bin
+popd # $PKG
+popd # ../BUILD
+
+# EOF
