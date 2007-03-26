@@ -16,9 +16,11 @@ popd
 ./build-numeric
 ./build-numpy-svn
 ./build-scipy-svn
+./build-matplotlib
 ./build-gccxml
 ./build-qt3.3
 ./build-qt4.2
+./build-engauge
 ./build-qscintilla1
 ./build-simage
 ./build-coin-qt3
