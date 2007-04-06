@@ -10,8 +10,9 @@ fi
 popd
 
 ./build-python
-./build-pychecker
+./build-ipython
 ./build-mercurial
+./build-pychecker
 ./build-numarray
 ./build-numeric
 ./build-numpy-svn
