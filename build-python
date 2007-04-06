@@ -13,7 +13,7 @@ pushd ../BUILD
 rm -rf $PKG
 tar xfj ../SOURCES/$PKG.tar.bz2
 pushd $PKG
-OPT="-O3 -Wall" ./configure --prefix=$HOME/usr --with-cxx=g++
+OPT="-O3 -Wall" ./configure --prefix=$HOME/usr --with-cxx=g++ --enable-shared
 make -j $JOBS
 make install
 pushd Doc
