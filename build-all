@@ -23,11 +23,6 @@ popd
 ./build-qt4.2
 ./build-engauge
 ./build-qscintilla1
-./build-simage
-./build-coin-qt3
-./build-coin-qt4
-./build-soqt-qt3
-./build-soqt-qt4
 ./build-sip-svn
 ./build-pyqt-svn
 ./build-pyqt4-svn
@@ -40,6 +35,11 @@ popd
 ./build-pyqwt3d
 ./build-eric3
 ./build-eric4
+./build-simage
+./build-coin-qt3
+./build-coin-qt4
+./build-soqt-qt3
+./build-soqt-qt4
 
 # Local Variables: ***
 # mode: sh ***
