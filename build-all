@@ -23,9 +23,9 @@ popd
 ./build-qt4.2
 ./build-engauge
 ./build-qscintilla1
-./build-sip-svn
-./build-pyqt-svn
-./build-pyqt4-svn
+./build-sip
+./build-pyqt
+./build-pyqt4
 ./build-qscintilla2
 ./build-qwt-qt3
 ./build-qwt-qt4
