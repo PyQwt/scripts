@@ -3,7 +3,7 @@
 #WHERE=http://www.riverbankcomputing.com/Downloads/Snapshots/QScintilla1
 #PKG=QScintilla1-1.71-gpl-1-snapshot-20061103
 WHERE=http://www.riverbankcomputing.com/Downloads/QScintilla1
-PKG=QScintilla1-1.71-gpl-1.7
+PKG=QScintilla-1.71-gpl-1.7.1
 JOBS=$(getconf _NPROCESSORS_ONLN)
 
 pushd ../SOURCES
