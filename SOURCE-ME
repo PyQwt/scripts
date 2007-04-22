@@ -1,9 +1,6 @@
 # environment variables for a Python development system in $HOME/usr
 
-export SF=http://belnet.dl.sourceforge.net/sourceforge
-export SF=http://puzzle.dl.sourceforge.net/sourceforge
-export SF=http://heanet.dl.sourceforge.net/sourceforge
-export SF=http://switch.dl.sourceforge.net/sourceforge
+export SF=http://prdownloads.sourceforge.net
 
 export QTDIR=$HOME/usr/lib/qt3.3
 export QT4DIR=$HOME/usr/lib/qt4.2
