@@ -20,12 +20,12 @@ popd
 ./build-matplotlib
 ./build-gccxml
 ./build-qt3.3
-./build-qt4.2
+./build-qt4.3
 ./build-engauge
 ./build-qscintilla1
-./build-sip
-./build-pyqt
-./build-pyqt4
+./build-sip-svn
+./build-pyqt-svn
+./build-pyqt4-svn
 ./build-qscintilla2
 ./build-qwt-qt3
 ./build-qwt-qt4

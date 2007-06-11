@@ -13,7 +13,7 @@ pushd ../BUILD
 rm -rf $PKG
 tar xfz ../SOURCES/$PKG.tar.gz
 pushd $PKG
-./configure --prefix $HOME/usr/lib/qt4.2 --with-qt=$HOME/usr/lib/qt4.2
+./configure --prefix $HOME/usr/lib/qt4.3 --with-qt=$HOME/usr/lib/qt4.3
 make -j $JOBS
 make install
 
