@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=qwtplot3d-0.2.6
+PKG=qwtplot3d-0.2.7
 
 pushd ../SOURCES
 if [ ! -f $PKG.tgz ]; then
