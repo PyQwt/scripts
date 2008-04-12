@@ -3,18 +3,18 @@
 export SF=http://prdownloads.sourceforge.net
 
 export QTDIR=$HOME/usr/lib/qt3.3
-export QT4DIR=$HOME/usr/lib/qt4.3
+export QT4DIR=$HOME/usr/lib/qt4.4
 
 export MANIPQT=$HOME/CVS/ManipQt
 
-PATH=$HOME/usr/lib/qt4.3/bin:$PATH
+PATH=$HOME/usr/lib/qt4.4/bin:$PATH
 PATH=$MANIPQT/bin:$PATH
 PATH=$HOME/usr/bin:$PATH
 PATH=$HOME/CVS/PyQwt/BUILD/gccxml-build/bin:$PATH
 export PATH
 
 LD_LIBRARY_PATH=$HOME/usr/lib/qt3.3/lib:$LD_LIBRARY_PATH
-LD_LIBRARY_PATH=$HOME/usr/lib/qt4.3/lib:$LD_LIBRARY_PATH
+LD_LIBRARY_PATH=$HOME/usr/lib/qt4.4/lib:$LD_LIBRARY_PATH
 LD_LIBRARY_PATH=$HOME/usr/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH
 

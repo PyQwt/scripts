@@ -11,35 +11,32 @@ popd
 
 ./build-python
 ./build-ipython
-./build-mercurial
 ./build-pychecker
 ./build-numarray
 ./build-numeric
 ./build-numpy-svn
 ./build-scipy-svn
-./build-matplotlib
-./build-gccxml
+#./build-matplotlib
 ./build-qt3.3
-./build-qt4.3
-./build-engauge
-./build-qscintilla1
+./build-qt4.4
 ./build-sip-svn
-./build-pyqt-svn
+#./build-pyqt-svn
+./build-pyqt
 ./build-pyqt4-svn
 ./build-qscintilla2
-./build-qwt-qt3
-./build-qwt-qt4
-./build-qwtplot3d
+#./build-qwt-qt3
+#./build-qwt-qt4
+#./build-qwtplot3d
 ./build-pyqwt5
 ./build-pyqwt4
 ./build-pyqwt3d
-./build-eric3
-./build-eric4
-./build-simage
-./build-coin-qt3
-./build-coin-qt4
-./build-soqt-qt3
-./build-soqt-qt4
+#./build-eric3
+#./build-eric4
+#./build-simage
+#./build-coin-qt3
+#./build-coin-qt4
+#./build-soqt-qt3
+#./build-soqt-qt4
 
 # Local Variables: ***
 # mode: sh ***
