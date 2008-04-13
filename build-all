@@ -18,7 +18,7 @@ popd
 ./build-scipy-svn
 #./build-matplotlib
 ./build-qt3.3
-./build-qt4.4
+./build-qt4.3
 ./build-sip-svn
 #./build-pyqt-svn
 ./build-pyqt
