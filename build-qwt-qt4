@@ -1,10 +1,10 @@
 #!/bin/bash
 
-PKG=qwt-5.0.1
+PKG=qwt-5.0.2
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.bz2 ]; then
-    wget $SF/qwt/$PKG.tar.bz2
+    wget http://prdownloads.sf.net/qwt/$PKG.tar.bz2
 fi
 popd
 
