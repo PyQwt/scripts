@@ -1,9 +1,9 @@
 #!/bin/bash
 
-PKG=pychecker-0.8.17
+PKG=pychecker-0.8.18
 
 pushd ../SOURCES
-if [ ! -f pychecker-0.8.17.tar.gz ]; then 
+if [ ! -f $PKG.tar.gz ]; then 
     wget $SF/pychecker/$PKG.tar.gz
 fi
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=matplotlib-0.90.0
+PKG=matplotlib-0.98.3
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then
