@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=qwt-5.0.2
+PKG=qwt-5.1.1
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.bz2 ]; then
