@@ -1,0 +1,31 @@
+#!/bin/bash
+
+PKG=qt-x11-opensource-src-4.4.1
+JOBS=$(getconf _NPROCESSORS_ONLN)
+
+pushd ../SOURCES
+if [ ! -f $PKG.tar.gz ]; then
+    wget ftp://ftp.trolltech.com/qt/source/$PKG.tar.gz
+fi
+popd
+
+pushd ../BUILD
+rm -rf $PKG
+tar xfz ../SOURCES/$PKG.tar.gz
+pushd $PKG
+./configure \
+    -static \
+    -prefix ~/usr/lib/qt4.4 \
+    -qt-gif \
+    -no-rpath \
+    -no-exceptions <<EOF
+yes
+EOF
+make -j $JOBS
+make install
+popd # $PKG
+popd # ../BUILD
+
+# Local Variables: ***
+# mode: sh ***
+# End: ***

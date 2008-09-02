@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# you must have done
+# source SOURCE-ME
+
+pushd ..
+if [ ! -d SOURCES ]; then
+    mkdir SOURCES
+fi
+if [ ! -d BUILD ]; then
+    mkdir BUILD
+fi
+popd
+
+./build-python
+./build-numpy-svn
+./build-qt4.4-static
+./build-qwt-qt4-static
+./build-sip-svn
+./build-pyqt4-svn-static
+
+# Local Variables: ***
+# mode: sh ***
+# End: ***

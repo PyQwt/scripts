@@ -1,0 +1,38 @@
+#!/bin/bash
+
+PKG=qwt-5.1.1
+
+pushd ../SOURCES
+if [ ! -f $PKG.tar.bz2 ]; then
+    wget http://prdownloads.sf.net/qwt/$PKG.tar.bz2
+fi
+popd
+
+pushd ../BUILD
+rm -rf $PKG
+tar xfj ../SOURCES/$PKG.tar.bz2
+pushd $PKG
+
+# patch the configuration
+perl -pi -e 's|INSTALLBASE/lib|\[QT_INSTALL_PREFIX\]/lib|g' qwtconfig.pri
+perl -pi -e 's|INSTALLBASE/include|\[QT_INSTALL_PREFIX\]/include/qwt|g' qwtconfig.pri
+perl -pi -e 's|INSTALLBASE/doc|\[QT_INSTALL_PREFIX\]/doc/qwt|g' qwtconfig.pri
+perl -pi -e 's|INSTALLBASE/doc|\[QT_INSTALL_PREFIX\]/doc/qwt|g' qwtconfig.pri
+cat >> qwtconfig.pri <<EOF
+CONFIG += QwtSVGItem
+CONFIG -= QwtDll
+EOF
+
+# library
+(cd src && qmake && make && make install)
+# examples
+(cd examples && qmake && make)
+# designer
+(cd designer && qmake && make && make install)
+popd # $PKG
+popd # ../BUILD
+
+# Local Variables: ***
+# mode: sh ***
+# End: ***
+

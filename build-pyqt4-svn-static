@@ -1,0 +1,47 @@
+#!/bin/bash
+set -x
+
+WHERE=http://www.riverbankcomputing.com/static/Downloads/PyQt4
+PKG=PyQt-x11-gpl-4.4.4-snapshot-20080827
+JOBS=$(getconf _NPROCESSORS_ONLN)
+
+PYQWT_WHERE=http://prdownloads.sourceforge.net/pyqwt
+PYQWT_PKG=PyQwt-5.1.0
+
+pushd ../SOURCES
+if [ ! -f $PKG.tar.gz ]; then
+    wget $WHERE/$PKG.tar.gz
+fi
+if [ ! -f $PYQWT_PKG.tar.gz ]; then
+    wget $PYQWT_WHERE/$PYQWT_PKG.tar.gz
+fi
+popd
+
+pushd ../BUILD
+rm -rf $PKG
+tar xfz ../SOURCES/$PKG.tar.gz
+rm -rf $PYQWT_PKG
+tar xfz ../SOURCES/$PYQWT_PKG.tar.gz
+pushd $PKG
+mv configure.py configure.py.gv
+cp ../../scripts/configure.py .
+python configure.py -u -a -c -j $((2*$JOBS)) \
+    -g --mwg-qwt=../$PYQWT_PKG \
+    -q ~/usr/lib/qt4.4/bin/qmake \
+    -g CXXFLAGS+="-fno-exceptions" <<EOF
+yes
+EOF
+make -j $JOBS
+# do a clean install
+rm -rf ~/usr/lib/python2.6/site-packages/PyQt4
+make install
+mkdir -p $HOME/usr/share/doc/PyQt4
+cp -R doc/* $HOME/usr/share/doc/PyQt4
+# copy the PyQwt Python library files
+cp -R ../$PYQWT_PKG/qt4lib/PyQt4/Qwt5 $HOME/usr/lib/python2.6/site-packages/PyQt4
+# move Qwt.so to the right place
+mv $HOME/usr/lib/python2.6/site-packages/PyQt4/Qwt.so $HOME/usr/lib/python2.6/site-packages/PyQt4/Qwt5
+popd # PKG
+popd # ../BUILD
+
+# EOF
