@@ -1,0 +1,21 @@
+#!/bin/bash
+
+PKG=docutils-0.5
+
+pushd ../SOURCES
+if [ ! -f $PKG.tar.gz ]; then
+    wget http://prdownloads.sourceforge.net/docutils/$PKG.tar.gz
+fi
+popd
+
+pushd ../BUILD
+rm -rf $PKG
+tar xfz ../SOURCES/$PKG.tar.gz
+pushd $PKG
+python setup.py install
+popd # $PKG
+popd # ../BUILD
+
+# Local Variables: ***
+# mode: sh ***
+# End: ***

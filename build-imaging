@@ -1,0 +1,19 @@
+#!/bin/bash
+
+WHERE=http://effbot.org/media/downloads/
+PKG=Imaging-1.1.6
+
+pushd ../SOURCES
+if [ ! -f $PKG.tar.gz ]; then 
+    wget $WHERE/$PKG.tar.gz
+fi
+
+pushd ../BUILD
+rm -rf $PKG
+tar xfz ../SOURCES/$PKG.tar.gz
+pushd $PKG
+python setup.py install
+popd # $PKG
+popd # ../BUILD
+
+# EOF

@@ -10,8 +10,14 @@ fi
 popd
 
 ./build-python
+./build-setuptools
 ./build-ipython
 ./build-pychecker
+./build-docutils
+./build-pygments
+./build-jinja
+./build-sphinx
+./build-imaging
 ./build-numarray
 ./build-numeric
 ./build-numpy-svn

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+PKG=setuptools-0.6c8
+
+pushd ../SOURCES
+if [ ! -f $PKG.tar.gz ]; then
+    wget http://pypi.python.org/packages/source/s/setuptools/$PKG.tar.gz
+fi
+popd
+
+pushd ../BUILD
+rm -rf $PKG
+tar xfz ../SOURCES/$PKG.tar.gz
+pushd $PKG
+python setup.py install
+popd # $PKG
+popd # ../BUILD
+
+# Local Variables: ***
+# mode: sh ***
+# End: ***
