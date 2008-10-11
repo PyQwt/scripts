@@ -13,6 +13,7 @@ popd
 ./build-setuptools
 ./build-ipython
 ./build-pychecker
+./build-pyglet
 ./build-docutils
 ./build-pygments
 ./build-jinja
