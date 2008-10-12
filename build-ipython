@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=ipython-0.8.4
+PKG=ipython-0.9.1
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then
