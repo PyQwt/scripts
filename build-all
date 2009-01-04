@@ -23,7 +23,7 @@ popd
 ./build-numeric
 ./build-numpy-svn
 ./build-scipy-svn
-#./build-matplotlib
+./build-matplotlib
 ./build-qt3.3
 ./build-qt4.4
 ./build-sip
