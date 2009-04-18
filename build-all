@@ -28,9 +28,9 @@ popd
 ./build-qt4.5
 #./build-sip
 ./build-sip-svn
-./build-pyqt
-#./build-pyqt-svn
-./build-pyqt4
+#./build-pyqt
+./build-pyqt-svn
+#./build-pyqt4
 ./build-pyqt4-svn
 #./build-qscintilla2
 #./build-qscintilla2-svn
