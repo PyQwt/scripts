@@ -16,7 +16,7 @@ popd
 ./build-pyglet
 ./build-docutils
 ./build-pygments
-./build-jinja
+./build-jinja2
 ./build-sphinx
 ./build-imaging
 ./build-numarray
