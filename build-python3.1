@@ -1,0 +1,31 @@
+#!/bin/bash
+
+VER=3.1.1
+PKG=Python-$VER
+JOBS=$(getconf _NPROCESSORS_ONLN)
+
+pushd ../SOURCES
+if [ ! -f $PKG.tar.bz2 ]; then
+    wget http://www.python.org/ftp/python/$VER/$PKG.tar.bz2
+fi
+popd
+
+pushd ../BUILD
+rm -rf $PKG
+tar xfj ../SOURCES/$PKG.tar.bz2
+pushd $PKG
+./configure --prefix=$HOME/usr --with-cxx=g++ --enable-shared --with-pydebug --with-computed-gotos
+make -j $JOBS
+make install
+#pushd Doc
+#make html
+#mkdir -p $HOME/usr/share/doc/python2.6
+#cp -R build/html $HOME/usr/share/doc/python2.6
+#popd # Doc
+popd # $PKG
+popd # ../BUILD
+
+# Local Variables: ***
+# mode: sh ***
+# End: ***
+
