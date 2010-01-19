@@ -3,18 +3,12 @@
 PKG=numpy
 
 pushd ../BUILD
+
+rm -rf $PKG
 if [ ! -e numpy ]; then
     svn co http://svn.scipy.org/svn/numpy/trunk numpy
 fi
-
 pushd $PKG
-svn up
-if [ -f /etc/mandrakelinux-release ]; then
-cat >site.cfg <<EOF
-[atlas]
-atlas_libs = lapack, f77blas, cblas, atlas
-EOF
-fi
 if [ -f /etc/gentoo-release ]; then
 cat >site.cfg <<EOF
 [atlas]
@@ -24,6 +18,22 @@ fi
 python setup.py build --force 
 python setup.py install
 popd # $PKG
+
+rm -rf $PKG
+if [ ! -e numpy ]; then
+    svn co http://svn.scipy.org/svn/numpy/trunk numpy
+fi
+pushd $PKG
+if [ -f /etc/gentoo-release ]; then
+cat >site.cfg <<EOF
+[atlas]
+atlas_libs = lapack, blas, cblas, atlas
+EOF
+fi
+python3 setup.py build --force
+python3 setup.py install
+popd # $PKG
+
 popd # ../BUILD
 
 # Local Variables: ***

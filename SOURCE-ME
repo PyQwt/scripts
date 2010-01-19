@@ -3,17 +3,17 @@
 export SF=http://prdownloads.sourceforge.net
 
 export QTDIR=$HOME/usr/lib/qt3.3
-export QT4DIR=$HOME/usr/lib/qt4.5
+export QT4DIR=$HOME/usr/lib/qt4.6
 
 export MANIPQT=$HOME/CVS/ManipQt
 
-PATH=$HOME/usr/lib/qt4.5/bin:$PATH
+PATH=$HOME/usr/lib/qt4.6/bin:$PATH
 PATH=$MANIPQT/bin:$PATH
 PATH=$HOME/usr/bin:$PATH
 export PATH
 
 LD_LIBRARY_PATH=$HOME/usr/lib/qt3.3/lib:$LD_LIBRARY_PATH
-LD_LIBRARY_PATH=$HOME/usr/lib/qt4.5/lib:$LD_LIBRARY_PATH
+LD_LIBRARY_PATH=$HOME/usr/lib/qt4.6/lib:$LD_LIBRARY_PATH
 LD_LIBRARY_PATH=$HOME/usr/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH
 
@@ -21,8 +21,6 @@ export PYTHONSTARTUP=$HOME/.pythonrc.py
 #export PYTHONDOCS=$HOME/usr/share/doc/python2.5/html
 #export PYTHONDOCDIR=$HOME/usr/share/doc/python2.5/html
 export PYQT4DOCDIR=$HOME/usr/share/doc/PyQt4
-
-#export ENGAUGE_USERMANUAL=$HOME/CVS/PyQwt/BUILD/digitizer/usermanual
 
 # Local Variables: ***
 # mode: sh ***
