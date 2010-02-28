@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=pyglet-1.1.2
+PKG=pyglet-1.1.4
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then

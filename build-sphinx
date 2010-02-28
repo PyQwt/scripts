@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=Sphinx-0.6.3
+PKG=Sphinx-0.6.4
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then

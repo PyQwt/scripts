@@ -1,7 +1,7 @@
 #!/bin/bash
 
 WHERE=http://www.riverbankcomputing.com/static/Downloads/sip4
-PKG=sip-4.10-snapshot-20100108
+PKG=sip-snapshot-4.10.1-637497440cb5
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then

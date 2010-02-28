@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=setuptools-0.6c9
+PKG=setuptools-0.6c11
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then
