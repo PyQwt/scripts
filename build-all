@@ -10,6 +10,7 @@ fi
 popd
 
 ./build-python
+./build-python3
 ./build-setuptools
 ./build-ipython
 ./build-pychecker
@@ -31,7 +32,7 @@ popd
 #./build-pyqt
 ./build-pyqt-svn
 #./build-pyqt4
-./build-pyqt4
+./build-pyqt4-svn
 #./build-qscintilla2
 #./build-qscintilla2-svn
 #./build-qwt-qt3
