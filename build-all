@@ -10,7 +10,7 @@ fi
 popd
 
 ./build-python
-./build-python3
+./build-python3.1
 ./build-setuptools
 ./build-ipython
 ./build-pychecker
@@ -20,15 +20,13 @@ popd
 ./build-jinja2
 ./build-sphinx
 ./build-imaging
-#./build-numarray
-#./build-numeric
 ./build-numpy-svn
 ./build-scipy-svn
 #./build-matplotlib
 ./build-qt3.3
 ./build-qt4.6
-./build-sip
-./build-sip-svn
+#./build-sip
+./build-sip-hg
 #./build-pyqt
 ./build-pyqt-svn
 #./build-pyqt4

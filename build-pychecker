@@ -8,11 +8,13 @@ if [ ! -f $PKG.tar.gz ]; then
 fi
 
 pushd ../BUILD
+
 rm -rf $PKG
 tar xfz ../SOURCES/$PKG.tar.gz
 pushd $PKG
-python setup.py install
+python2.6 setup.py install
 popd # $PKG
+
 popd # ../BUILD
 
 # EOF

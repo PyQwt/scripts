@@ -1,11 +1,12 @@
 #!/bin/bash
 
-PKG=Python-2.6.4
+VER=2.6.5
+PKG=Python-$VER
 JOBS=$(getconf _NPROCESSORS_ONLN)
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.bz2 ]; then
-    wget http://www.python.org/ftp/python/2.6.4/$PKG.tar.bz2
+    wget http://www.python.org/ftp/python/$VER/$PKG.tar.bz2
 fi
 popd
 
@@ -13,7 +14,7 @@ pushd ../BUILD
 rm -rf $PKG
 tar xfj ../SOURCES/$PKG.tar.bz2
 pushd $PKG
-./configure --prefix=$HOME/usr --with-cxx=g++ --enable-shared --with-pydebug
+./configure --prefix=$HOME/usr --with-cxx=g++ --enable-shared
 make -j $JOBS
 make install
 pushd Doc

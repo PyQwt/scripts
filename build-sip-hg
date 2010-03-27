@@ -1,0 +1,26 @@
+#!/bin/bash
+
+WHERE=http://www.riverbankcomputing.com/hg/sip
+PKG=sip
+
+pushd ../BUILD
+
+rm -rf $PKG
+tar xvfz ../SOURCES/$PKG.tar.gz
+pushd $PKG
+python configure.py -u
+make
+make install
+popd # $PKG
+
+rm -rf $PKG
+tar xvfz ../SOURCES/$PKG.tar.gz
+pushd $PKG
+python3 configure.py -u
+make
+make install
+popd # $PKG
+
+popd # ../BUILD
+
+# EOF
