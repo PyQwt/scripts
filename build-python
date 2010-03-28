@@ -14,7 +14,7 @@ pushd ../BUILD
 rm -rf $PKG
 tar xfj ../SOURCES/$PKG.tar.bz2
 pushd $PKG
-./configure --prefix=$HOME/usr --with-cxx=g++ --enable-shared
+./configure --prefix=$HOME/usr --with-cxx=g++ --enable-shared --enable-unicode=ucs4
 make -j $JOBS
 make install
 pushd Doc
