@@ -1,12 +1,18 @@
 #!/bin/bash
 
-WHERE=http://www.riverbankcomputing.com/hg/sip
-PKG=sip
+WHERE=http://www.riverbankcomputing.co.uk/static/Downloads/sip4/
+PKG=sip-snapshot-4.10.2-9fe1eb5bf1ac
+
+pushd ../SOURCES
+if [ ! -f $PKG.tar.gz ]; then
+    wget $WHERE/$PKG.tar.gz
+fi
+popd
 
 pushd ../BUILD
-
 rm -rf $PKG
-tar xvfz ../SOURCES/$PKG.tar.gz
+tar xfz ../SOURCES/$PKG.tar.gz
+
 pushd $PKG
 python configure.py -u
 make
@@ -14,7 +20,8 @@ make install
 popd # $PKG
 
 rm -rf $PKG
-tar xvfz ../SOURCES/$PKG.tar.gz
+tar xfz ../SOURCES/$PKG.tar.gz
+
 pushd $PKG
 python3 configure.py -u
 make
