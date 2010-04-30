@@ -2,6 +2,7 @@
 
 WHERE=http://www.riverbankcomputing.com/static/Downloads/PyQt3
 PKG=PyQt-x11-gpl-snapshot-3.18.2-29855a84d8b6
+
 JOBS=$(getconf _NPROCESSORS_ONLN)
 
 pushd ../SOURCES
