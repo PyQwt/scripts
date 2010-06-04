@@ -1,0 +1,19 @@
+#!/bin/bash
+
+PKG=pdfedit-0.4.5
+
+pushd ../SOURCES
+if [ ! -f $PKG.tar.bz2 ]; then
+    wget $SF/pdfedit/$PKG.tar.bz2
+fi
+popd
+
+pushd ../BUILD
+rm -rf $PKG
+tar xfj ../SOURCES/$PKG.tar.bz2
+pushd $PKG
+./configure --prefix=$HOME/usr
+make
+make install
+popd # $PKG
+popd # ../BUILD
