@@ -2,9 +2,23 @@
 
 pushd ../pyqwt5
 cvs up -dP
-make distclean
-make install-trace
 popd # ../pyqwt5
+
+function version() {
+    rm -rf *qt$2
+    $1 configure.py -$2 --debug --trace -Q ../qwt-5.2
+    make install
+}
+
+pushd ../pyqwt5/configure
+version python2.5 3
+version python2.5 4
+version python2.6 3 
+version python2.6 4
+version python2.7 3
+version python2.7 4
+version python3.1 4
+popd # ../pyqwt5/configure
 
 # Local Variables: ***
 # mode: sh ***

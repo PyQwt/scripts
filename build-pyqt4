@@ -1,7 +1,7 @@
 #!/bin/bash
 
 WHERE=http://www.riverbankcomputing.com/static/Downloads/PyQt4
-PKG=PyQt-x11-gpl-4.7
+PKG=PyQt-x11-gpl-4.7.4
 JOBS=$(getconf _NPROCESSORS_ONLN)
 
 pushd ../SOURCES
@@ -10,33 +10,30 @@ if [ ! -f $PKG.tar.gz ]; then
 fi
 popd
 
+function version() {
+    rm -rf $PKG
+    tar xfz ../SOURCES/$PKG.tar.gz
+    pushd $PKG
+    $1 configure.py -u -a -c -j $((2*$JOBS)) \
+	-q $HOME/usr/lib/qt4.6/bin/qmake \
+	CXXFLAGS+="-fno-exceptions" <<EOF
+yes
+EOF
+    make -j $JOBS
+    make install
+    mkdir -p $HOME/usr/share/doc/PyQt4
+    cp -R doc/* $HOME/usr/share/doc/PyQt4
+    popd # PKG
+}
+
 pushd ../BUILD
-rm -rf $PKG
-tar xfz ../SOURCES/$PKG.tar.gz
-pushd $PKG
-python configure.py -u -a -c -j $((2*$JOBS)) \
-    -q $HOME/usr/lib/qt4.6/bin/qmake \
-    CXXFLAGS+="-fno-exceptions" <<EOF
-yes
-EOF
-make -j $JOBS
-make install
-mkdir -p $HOME/usr/share/doc/PyQt4
-cp -R doc/* $HOME/usr/share/doc/PyQt4
-popd # PKG
-
-rm -rf $PKG
-tar xfz ../SOURCES/$PKG.tar.gz
-pushd $PKG
-python3 configure.py -u -a -c -j $((2*$JOBS)) \
-    -q $HOME/usr/lib/qt4.6/bin/qmake \
-    CXXFLAGS+="-fno-exceptions" <<EOF
-yes
-EOF
-make -j $JOBS
-make install
-popd # PKG
-
+version python2.5
+version python2.6
+version python2.7
+version python3.1
 popd # ../BUILD
 
-# EOF
+# Local Variables: ***
+# mode: sh ***
+# End: ***
+

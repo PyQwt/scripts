@@ -17,11 +17,6 @@ pushd $PKG
 ./configure --prefix=$HOME/usr --with-cxx=g++ --enable-shared --enable-unicode=ucs4
 make -j $JOBS
 make install
-pushd Doc
-make html
-mkdir -p $HOME/usr/share/doc/python2.6
-cp -R build/html $HOME/usr/share/doc/python2.6
-popd # Doc
 popd # $PKG
 popd # ../BUILD
 

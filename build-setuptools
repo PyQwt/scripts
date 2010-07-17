@@ -1,20 +1,24 @@
 #!/bin/bash
 
-PKG=setuptools-0.6c11
+PKG=distribute-0.6.8
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then
-    wget http://pypi.python.org/packages/source/s/setuptools/$PKG.tar.gz
+    wget http://pypi.python.org/packages/source/d/distribute/$PKG.tar.gz
 fi
 popd
 
-pushd ../BUILD
-rm -rf $PKG
-tar xfz ../SOURCES/$PKG.tar.gz
-pushd $PKG
-python2.6 setup.py install
-popd # $PKG
+function version() {
+    rm -rf $PKG
+    tar xfz ../SOURCES/$PKG.tar.gz
+    pushd $PKG
+    $1 setup.py install
+    popd # $PKG
+}
 
+pushd ../BUILD
+version python2.7
+version python3.1
 popd # ../BUILD
 
 # Local Variables: ***

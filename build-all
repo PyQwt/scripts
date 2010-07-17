@@ -9,7 +9,9 @@ if [ ! -d BUILD ]; then
 fi
 popd
 
-./build-python
+./build-python2.5
+./build-python2.6
+./build-python2.7
 ./build-python3.1
 ./build-setuptools
 ./build-ipython
@@ -25,19 +27,19 @@ popd
 #./build-matplotlib
 ./build-qt3.3
 ./build-qt4.6
-#./build-sip
-./build-sip-hg
+./build-sip
+#./build-sip-hg
 #./build-pyqt
 ./build-pyqt-svn
-#./build-pyqt4
-./build-pyqt4-svn
+./build-pyqt4
+#./build-pyqt4-svn
 #./build-qscintilla2
 #./build-qscintilla2-svn
 #./build-qwt-qt3
 #./build-qwt-qt4
 #./build-qwtplot3d
 ./build-gccxml
-#./build-pyqwt5
+./build-pyqwt5
 #./build-pyqwt4
 #./build-pyqwt3d
 #./build-eric3

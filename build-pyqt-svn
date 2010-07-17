@@ -11,18 +11,24 @@ if [ ! -f $PKG.tar.gz ]; then
 fi
 popd
 
-pushd ../BUILD
-rm -rf $PKG
-tar xfz ../SOURCES/$PKG.tar.gz
-pushd $PKG
-python configure.py -u -c -j $((2*$JOBS)) \
-    -r -q $HOME/usr/lib/qt3.3 \
-    CXXFLAGS+="-fno-exceptions" <<EOF
+function version() {
+    rm -rf $PKG
+    tar xfz ../SOURCES/$PKG.tar.gz
+    pushd $PKG
+    $1 configure.py -u -c -j $((2*$JOBS)) \
+	-r -q $HOME/usr/lib/qt3.3 \
+	CXXFLAGS+="-fno-exceptions" <<EOF
 yes
 EOF
-make -j $JOBS
-make install
-popd # $PKG
+    make -j $JOBS
+    make install
+    popd # $PKG
+}
+
+pushd ../BUILD
+version python2.5
+version python2.6
+version python2.7
 popd # ../BUILD
 
 # Local Variables: ***

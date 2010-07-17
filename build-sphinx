@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=Sphinx-0.6.5
+PKG=Sphinx-1.0b2
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then
@@ -8,12 +8,16 @@ if [ ! -f $PKG.tar.gz ]; then
 fi
 popd
 
+function version() {
+    rm -rf $PKG
+    tar xfz ../SOURCES/$PKG.tar.gz
+    pushd $PKG
+    $1 setup.py install
+    popd # $PKG
+}
+
 pushd ../BUILD
-rm -rf $PKG
-tar xfz ../SOURCES/$PKG.tar.gz
-pushd $PKG
-python setup.py install
-popd # $PKG
+version python2.7
 popd # ../BUILD
 
 # Local Variables: ***
