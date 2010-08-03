@@ -18,6 +18,8 @@ function version() {
 }
 
 pushd ../BUILD
+version python2.5
+version python2.6
 version python2.7
 version python3.1
 popd # ../BUILD

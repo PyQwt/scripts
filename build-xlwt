@@ -1,22 +1,18 @@
 #!/bin/bash
 
-PKG=scipy
+PKG=xlwt-0.7.2
 
 pushd ../SOURCES
-if [ ! -e scipy ]; then
-    svn co http://svn.scipy.org/svn/scipy/trunk scipy
-else
-    pushd scipy
-    svn up
-    popd scipy
+if [ ! -f $PKG.tar.gz ]; then
+    wget http://pypi.python.org/packages/source/x/xlwt/$PKG.tar.gz
 fi
-popd # ../SOURCES
+popd
+
 
 function version() {
     rm -rf $PKG
-    cp -r ../SOURCES/$PKG .
+    tar xfz ../SOURCES/$PKG.tar.gz
     pushd $PKG
-    $1 setup.py build --force
     $1 setup.py install
     popd # $PKG
 }
