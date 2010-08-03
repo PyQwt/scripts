@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=Sphinx-1.0b2
+PKG=Sphinx-1.0.1
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then
@@ -17,6 +17,8 @@ function version() {
 }
 
 pushd ../BUILD
+version python2.5
+version python2.6
 version python2.7
 popd # ../BUILD
 
