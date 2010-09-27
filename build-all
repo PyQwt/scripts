@@ -33,13 +33,15 @@ popd
 ./build-pyqt-svn
 ./build-pyqt4
 #./build-pyqt4-svn
-#./build-qscintilla2
+./build-qscintilla2
 #./build-qscintilla2-svn
 #./build-qwt-qt3
 #./build-qwt-qt4
 #./build-qwtplot3d
 ./build-gccxml
 ./build-pyqwt5
+./build-guidata
+./build-guiqwt
 #./build-pyqwt4
 #./build-pyqwt3d
 #./build-eric3

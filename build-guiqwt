@@ -1,0 +1,28 @@
+#!/bin/bash
+
+PKG=guiqwt-2.0.3
+
+pushd ../SOURCES
+if [ ! -f $PKG.zip ]; then
+    wget $SF/guiqwt/$PKG.zip
+fi
+popd
+
+function version() {
+    rm -rf $PKG
+    unzip ../SOURCES/$PKG.zip
+    pushd $PKG
+    $1 setup.py install
+    popd # $PKG
+}
+
+pushd ../BUILD
+version python2.7
+version python2.6
+version python2.7
+#version python3.1
+popd # ../BUILD
+
+# Local Variables: ***
+# mode: sh ***
+# End: ***

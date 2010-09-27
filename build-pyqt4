@@ -1,7 +1,7 @@
 #!/bin/bash
 
 WHERE=http://www.riverbankcomputing.com/static/Downloads/PyQt4
-PKG=PyQt-x11-gpl-4.7.4
+PKG=PyQt-x11-gpl-4.7.7
 JOBS=$(getconf _NPROCESSORS_ONLN)
 
 pushd ../SOURCES
