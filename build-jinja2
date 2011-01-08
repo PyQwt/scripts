@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=Jinja2-2.5
+PKG=Jinja2-2.5.5
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then

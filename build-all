@@ -40,8 +40,8 @@ popd
 #./build-qwtplot3d
 ./build-gccxml
 ./build-pyqwt5
-./build-guidata
-./build-guiqwt
+#./build-guidata
+#./build-guiqwt
 #./build-pyqwt4
 #./build-pyqwt3d
 #./build-eric3
