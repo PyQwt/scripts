@@ -1,0 +1,34 @@
+#!/bin/bash
+
+VER=4.7.0
+PKG=qt-everywhere-opensource-src-$VER
+JOBS=$(getconf _NPROCESSORS_ONLN)
+
+pushd ../SOURCES
+if [ ! -f $PKG.tar.gz ]; then
+    wget ftp://ftp.trolltech.com/qt/source/$PKG.tar.gz
+fi
+popd
+
+pushd ../BUILD
+rm -rf $PKG
+tar xfz ../SOURCES/$PKG.tar.gz
+pushd $PKG
+#sed -ie 's/QMAKE_LFLAGS\t/#QMAKE_LFLAGS\t/' mkspecs/common/g++.conf
+./configure \
+    -debug \
+    -prefix ~/usr/lib/qt4.7 \
+    -qt-gif \
+    -no-rpath \
+    -no-exceptions <<EOF
+o
+yes
+EOF
+make -j $JOBS
+make install
+popd # $PKG
+popd # ../BUILD
+
+# Local Variables: ***
+# mode: sh ***
+# End: ***
