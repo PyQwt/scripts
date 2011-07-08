@@ -4,10 +4,10 @@ PKG=numpy
 
 pushd ../SOURCES
 if [ ! -e numpy ]; then
-    svn co http://svn.scipy.org/svn/numpy/trunk numpy
+    git clone git://github.com/numpy/numpy.git
 else
     pushd numpy
-    svn up
+    git pull
     popd numpy
 fi
 popd # ../SOURCES
@@ -17,7 +17,7 @@ function version() {
     cp -r ../SOURCES/$PKG .
     pushd $PKG
     if [ -f /etc/gentoo-release ]; then
-	cat >site.cfg <<EOF
+        cat >site.cfg <<EOF
 [atlas]
 atlas_libs = lapack, blas, cblas, atlas
 EOF
@@ -32,6 +32,7 @@ version python2.5
 version python2.6
 version python2.7
 version python3.1
+version python3.2
 popd # ../BUILD
 
 # Local Variables: ***

@@ -13,6 +13,7 @@ popd
 ./build-python2.6
 ./build-python2.7
 ./build-python3.1
+./build-python3.2
 ./build-setuptools
 ./build-ipython
 ./build-pychecker
@@ -22,11 +23,12 @@ popd
 ./build-jinja2
 ./build-sphinx
 ./build-imaging
-./build-numpy-svn
-./build-scipy-svn
+./build-numpy-git
+./build-scipy-git
+./build-sympy-git
 #./build-matplotlib
 ./build-qt3.3
-./build-qt4.6
+./build-qt4.7
 ./build-sip
 #./build-sip-hg
 #./build-pyqt

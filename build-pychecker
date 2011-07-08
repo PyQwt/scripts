@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=pychecker-0.8.18
+PKG=pychecker-0.8.19
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then 
@@ -12,7 +12,9 @@ pushd ../BUILD
 rm -rf $PKG
 tar xfz ../SOURCES/$PKG.tar.gz
 pushd $PKG
+python2.5 setup.py install
 python2.6 setup.py install
+python2.7 setup.py install
 popd # $PKG
 
 popd # ../BUILD

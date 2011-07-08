@@ -4,10 +4,10 @@ PKG=scipy
 
 pushd ../SOURCES
 if [ ! -e scipy ]; then
-    svn co http://svn.scipy.org/svn/scipy/trunk scipy
+    git clone git://github.com/scipy/scipy.git
 else
     pushd scipy
-    svn up
+    git pull
     popd scipy
 fi
 popd # ../SOURCES
@@ -25,6 +25,8 @@ pushd ../BUILD
 version python2.5
 version python2.6
 version python2.7
+version python3.1
+version python3.2
 popd # ../BUILD
 
 # Local Variables: ***

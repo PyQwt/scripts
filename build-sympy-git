@@ -1,18 +1,23 @@
 #!/bin/bash
 
-PKG=Jinja2-2.5.5
+PKG=sympy
 
 pushd ../SOURCES
-if [ ! -f $PKG.tar.gz ]; then
-    wget http://pypi.python.org/packages/source/J/Jinja2/$PKG.tar.gz
+if [ ! -e sympy ]; then
+    git clone https://github.com/sympy/sympy.git
+#    git clone git://github.com/sympy/sympy.git
+else
+    pushd sympy
+    git pull
+    popd sympy
 fi
-popd
-
+popd # ../SOURCES
 
 function version() {
     rm -rf $PKG
-    tar xfz ../SOURCES/$PKG.tar.gz
+    cp -r ../SOURCES/$PKG .
     pushd $PKG
+    $1 setup.py build --force
     $1 setup.py install
     popd # $PKG
 }
@@ -21,8 +26,6 @@ pushd ../BUILD
 version python2.5
 version python2.6
 version python2.7
-version python3.1
-version python3.2
 popd # ../BUILD
 
 # Local Variables: ***

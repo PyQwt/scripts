@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=distribute-0.6.14
+PKG=distribute-0.6.19
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then
@@ -21,6 +21,7 @@ version python2.5
 version python2.6
 version python2.7
 version python3.1
+version python3.2
 popd # ../BUILD
 
 # Local Variables: ***

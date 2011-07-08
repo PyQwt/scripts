@@ -1,7 +1,7 @@
 #!/bin/bash
 
 WHERE=http://www.riverbankcomputing.co.uk/static/Downloads/QScintilla2/
-PKG=QScintilla-gpl-2.4.6
+PKG=QScintilla-gpl-2.5.1
 JOBS=$(getconf _NPROCESSORS_ONLN)
 
 pushd ../SOURCES
@@ -35,6 +35,7 @@ version python2.5
 version python2.6
 version python2.7
 version python3.1
+version python3.2
 popd # ../BUILD
 
 # Local Variables: ***
