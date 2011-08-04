@@ -1,21 +1,19 @@
 #!/bin/bash
 
-WHERE=http://www.riverbankcomputing.com/static/Downloads/sip4
-PKG=sip-4.12.4
+PKG=lxml-2.3
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then
-    wget $WHERE/$PKG.tar.gz
+    wget http://pypi.python.org/packages/source/l/lxml/$PKG.tar.gz
 fi
-popd # ../SOURCES
+popd
+
 
 function version() {
     rm -rf $PKG
-    tar xvfz ../SOURCES/$PKG.tar.gz
+    tar xfz ../SOURCES/$PKG.tar.gz
     pushd $PKG
-    $1 configure.py -u
-    make
-    make install
+    $1 setup.py install
     popd # $PKG
 }
 
@@ -25,7 +23,7 @@ version python2.6
 version python2.7
 version python3.1
 version python3.2
-popd # ../BUILD # BUILD
+popd # ../BUILD
 
 # Local Variables: ***
 # mode: sh ***
