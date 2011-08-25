@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=selenium-2.0.1
+PKG=selenium-2.5.0
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then
