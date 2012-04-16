@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=Pygments-1.4
+PKG=Pygments-1.5
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then

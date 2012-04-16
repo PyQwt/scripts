@@ -1,10 +1,11 @@
 #!/bin/bash
 
-PKG=ipython-0.10.2
+VER=0.12
+PKG=ipython-$VER
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then
-    wget http://ipython.scipy.org/dist/$PKG.tar.gz
+    wget http://archive.ipython.org/release/$VER/$PKG.tar.gz
 fi
 popd
 
@@ -13,9 +14,11 @@ pushd ../BUILD
 rm -rf $PKG
 tar xfz ../SOURCES/$PKG.tar.gz
 pushd $PKG
-python2.5 setup.py install
-python2.6 setup.py install
+#python2.5 setup.py install
+#python2.6 setup.py install
 python2.7 setup.py install
+#python3.1 setup.py install
+#python3.2 setup.py install
 popd # $PKG
 
 popd # ../BUILD
