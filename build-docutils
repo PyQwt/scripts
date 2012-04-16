@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKG=docutils-0.8
+PKG=docutils-0.8.1
 
 pushd ../SOURCES
 if [ ! -f $PKG.tar.gz ]; then
